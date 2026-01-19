@@ -1,98 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Legal Promotion Services</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body{
-      font-family: Arial, sans-serif;
-      background:#f4f4f4;
-      margin:0;
-      padding:0;
-    }
-    .container{
-      max-width:420px;
-      margin:30px auto;
-      background:#fff;
-      padding:20px;
-      border-radius:8px;
-      box-shadow:0 0 10px rgba(0,0,0,0.1);
-    }
-    h1{
-      text-align:center;
-    }
-    input, select, button{
-      width:100%;
-      padding:10px;
-      margin:10px 0;
-      font-size:16px;
-    }
-    button{
-      background:#25d366;
-      color:white;
-      border:none;
-      border-radius:5px;
-    }
-    .note{
-      font-size:14px;
-      color:#555;
-    }
-  </style>
+<title>Promotion & Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{font-family:Arial;background:#f2f2f2;padding:15px;}
+.box{background:#fff;padding:15px;border-radius:10px;margin-bottom:20px;}
+input,select,button{
+  width:100%;padding:10px;margin-top:10px;font-size:15px;
+}
+button{background:#25D366;color:white;border:none;border-radius:5px;}
+h2{text-align:center;}
+img{width:100%;border-radius:10px;}
+</style>
 </head>
-
 <body>
 
-<div class="container">
-  <h1>📢 Legal Promotion</h1>
+<!-- PROMOTION SECTION -->
+<div class="box">
+<h2>📢 Instagram Logo Promotion</h2>
 
-  <p class="note">
-    We provide <b>REAL & MANUAL</b> promotion only.  
-    No bots. No fake activity.
-  </p>
+<input id="pname" placeholder="Your Name">
+<input id="puser" placeholder="Instagram Username">
+<input id="pfollow" placeholder="Followers Count">
+<select id="ptype">
+  <option>Logo Promotion</option>
+  <option>Story Promotion</option>
+  <option>Post Promotion</option>
+</select>
+<input id="pwhatsapp" placeholder="Your WhatsApp Number">
 
-  <form id="orderForm">
-    <select id="service">
-      <option>Instagram Likes</option>
-      <option>Instagram Comments</option>
-      <option>YouTube Views</option>
-    </select>
+<button onclick="promo()">Submit Promotion Request</button>
+</div>
 
-    <input type="text" id="link" placeholder="Post / Video Link" required>
+<!-- DRESS STORE -->
+<div class="box">
+<h2>👕 Online Dress Store</h2>
 
-    <input type="number" id="quantity" placeholder="Quantity (e.g. 500)" required>
+<img src="https://via.placeholder.com/300">
+<h3>Stylish Dress</h3>
+<p>Price: ₹999</p>
 
-    <input type="text" id="whatsapp" placeholder="Your WhatsApp Number" required>
-
-    <button type="submit">Order on WhatsApp</button>
-  </form>
-
-  <p class="note">
-    💰 Payment via UPI only  
-    📩 After payment, order manually processed
-  </p>
+<button onclick="buy()">Buy Dress on WhatsApp</button>
 </div>
 
 <script>
-document.getElementById("orderForm").addEventListener("submit", function(e){
-  e.preventDefault();
+function promo(){
+let msg =
+"Instagram Promotion Request%0A"+
+"Name: "+pname.value+"%0A"+
+"Username: "+puser.value+"%0A"+
+"Followers: "+pfollow.value+"%0A"+
+"Type: "+ptype.value+"%0A"+
+"Customer WhatsApp: "+pwhatsapp.value;
 
-  var service = document.getElementById("service").value;
-  var link = document.getElementById("link").value;
-  var quantity = document.getElementById("quantity").value;
-  var whatsapp = document.getElementById("whatsapp").value;
+window.open("https://wa.me/917309448235?text="+msg);
+}
 
-  var message = 
-    "Hello, I want promotion 👇%0A%0A" +
-    "Service: " + service + "%0A" +
-    "Link: " + link + "%0A" +
-    "Quantity: " + quantity + "%0A" +
-    "My WhatsApp: " + whatsapp;
-
-  window.location.href = "https://wa.me/919628721124text=" + message;
-});
+function buy(){
+window.open("https://wa.me/917309448235?text=I want to buy the dress (₹999)");
+}
 </script>
 
 </body>
-</html>
+  </html>
