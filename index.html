@@ -1,25 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Legal Promotion</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Legal Promotion Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background:#f4f4f4;
+      margin:0;
+      padding:0;
+    }
+    .container{
+      max-width:420px;
+      margin:30px auto;
+      background:#fff;
+      padding:20px;
+      border-radius:8px;
+      box-shadow:0 0 10px rgba(0,0,0,0.1);
+    }
+    h1{
+      text-align:center;
+    }
+    input, select, button{
+      width:100%;
+      padding:10px;
+      margin:10px 0;
+      font-size:16px;
+    }
+    button{
+      background:#25d366;
+      color:white;
+      border:none;
+      border-radius:5px;
+    }
+    .note{
+      font-size:14px;
+      color:#555;
+    }
+  </style>
 </head>
-<body style="font-family:Arial; text-align:center; padding:20px;">
 
-  <h1>📢 Legal Views & Likes Promotion</h1>
-  <p>Hum sirf REAL aur LEGAL promotion service dete hain.</p>
+<body>
 
-  <h3>✅ Services</h3>
-  <p>• Instagram Promotion</p>
-  <p>• YouTube Video Promotion</p>
-  <p>• Real Reach & Engagement</p>
+<div class="container">
+  <h1>📢 Legal Promotion</h1>
 
-  <h3>📲 Order on WhatsApp</h3>
-  <a href="https://wa.me/919628721124">
-    <button style="padding:10px 20px; font-size:18px;">
-      WhatsApp Now
-    </button>
-  </a>
+  <p class="note">
+    We provide <b>REAL & MANUAL</b> promotion only.  
+    No bots. No fake activity.
+  </p>
+
+  <form id="orderForm">
+    <select id="service">
+      <option>Instagram Likes</option>
+      <option>Instagram Comments</option>
+      <option>YouTube Views</option>
+    </select>
+
+    <input type="text" id="link" placeholder="Post / Video Link" required>
+
+    <input type="number" id="quantity" placeholder="Quantity (e.g. 500)" required>
+
+    <input type="text" id="whatsapp" placeholder="Your WhatsApp Number" required>
+
+    <button type="submit">Order on WhatsApp</button>
+  </form>
+
+  <p class="note">
+    💰 Payment via UPI only  
+    📩 After payment, order manually processed
+  </p>
+</div>
+
+<script>
+document.getElementById("orderForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  var service = document.getElementById("service").value;
+  var link = document.getElementById("link").value;
+  var quantity = document.getElementById("quantity").value;
+  var whatsapp = document.getElementById("whatsapp").value;
+
+  var message = 
+    "Hello, I want promotion 👇%0A%0A" +
+    "Service: " + service + "%0A" +
+    "Link: " + link + "%0A" +
+    "Quantity: " + quantity + "%0A" +
+    "My WhatsApp: " + whatsapp;
+
+  window.location.href = "https://wa.me/919628721124text=" + message;
+});
+</script>
 
 </body>
 </html>
